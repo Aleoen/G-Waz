@@ -15,6 +15,7 @@
 		54F97A792348E08700A1E78D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54F97A772348E08700A1E78D /* Main.storyboard */; };
 		54F97A7B2348E08800A1E78D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54F97A7A2348E08800A1E78D /* Assets.xcassets */; };
 		54F97A7E2348E08800A1E78D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54F97A7C2348E08800A1E78D /* LaunchScreen.storyboard */; };
+		54F97A872348E3F600A1E78D /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 54F97A862348E3F600A1E78D /* LICENSE */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,8 @@
 		54F97A7A2348E08800A1E78D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		54F97A7D2348E08800A1E78D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		54F97A7F2348E08800A1E78D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		54F97A852348E2FF00A1E78D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		54F97A862348E3F600A1E78D /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +47,8 @@
 		54F97A612348E08700A1E78D = {
 			isa = PBXGroup;
 			children = (
+				54F97A862348E3F600A1E78D /* LICENSE */,
+				54F97A852348E2FF00A1E78D /* README.md */,
 				54F97A6C2348E08700A1E78D /* Sources */,
 				54F97A6B2348E08700A1E78D /* Products */,
 			);
@@ -131,6 +136,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54F97A872348E3F600A1E78D /* LICENSE in Resources */,
 				54F97A792348E08700A1E78D /* Main.storyboard in Resources */,
 				54F97A702348E08700A1E78D /* GameScene.sks in Resources */,
 				54F97A7B2348E08800A1E78D /* Assets.xcassets in Resources */,
