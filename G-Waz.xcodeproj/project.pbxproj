@@ -44,7 +44,7 @@
 		54F97A612348E08700A1E78D = {
 			isa = PBXGroup;
 			children = (
-				54F97A6C2348E08700A1E78D /* G-Waz */,
+				54F97A6C2348E08700A1E78D /* Sources */,
 				54F97A6B2348E08700A1E78D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -57,7 +57,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		54F97A6C2348E08700A1E78D /* G-Waz */ = {
+		54F97A6C2348E08700A1E78D /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				54F97A6D2348E08700A1E78D /* AppDelegate.swift */,
@@ -70,7 +70,7 @@
 				54F97A7C2348E08800A1E78D /* LaunchScreen.storyboard */,
 				54F97A7F2348E08800A1E78D /* Info.plist */,
 			);
-			path = "G-Waz";
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
