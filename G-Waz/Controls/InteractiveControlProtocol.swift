@@ -9,13 +9,13 @@
 import SpriteKit
 
 protocol InteractiveControl: SKSpriteNode {
-    static func setupForInteractiveControl(scene: SKScene?, fileNamed: String)
+    static func setupForInteractiveControl(scene: SKScene?, fileNamed: String, with color: SKColor, and label: String) -> InteractiveControl
     
     func specificSetupForInteractiveControl()
 }
 
 extension InteractiveControl {
-    static func setupForInteractiveControl(scene: SKScene?, fileNamed: String) {
+    static func setupForInteractiveControl(scene: SKScene?, fileNamed: String, with color: SKColor, and label: String) -> InteractiveControl {
         guard let scene = scene else {
             fatalError("SKScene is nil")
         }
@@ -29,10 +29,18 @@ extension InteractiveControl {
         control.isPaused = false
         control.isUserInteractionEnabled = true
         control.zPosition = 100
+        control.color = color
+        
+        if let labelNode = control.childNode(withName: "Label") as? SKLabelNode{
+            labelNode.text = label
+        }
+        
         control.specificSetupForInteractiveControl()
         
         control.removeFromParent()
         scene.addChild(control)
+        
+        return control
     }
     
     

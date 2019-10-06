@@ -11,6 +11,11 @@ import SpriteKit
 
 class GameScene: SKScene {
     
+    //MARK:- Variables
+    var buttonA: Button!
+    
+    
+    
     override func didMove(to view: SKView) {
         
         setupControls()
@@ -23,7 +28,13 @@ class GameScene: SKScene {
     //MARK:- Setup
     
     func setupControls() {
-        Button.setupForInteractiveControl(scene: self, fileNamed: "Button")
+        buttonA = Button.setupForInteractiveControl(scene: self, fileNamed: "Button", with: SKColor.blue, and: "A") as! Button
+        
+        
+        
+        
+        
+        
     }
     
 }
