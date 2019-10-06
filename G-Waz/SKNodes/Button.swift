@@ -9,6 +9,7 @@
 import SpriteKit
 
 class Button: SKSpriteNode, InteractiveControl {
+    
     func specificSetupForInteractiveControl() {
         color = SKColor.gray
     }

@@ -9,20 +9,30 @@
 import SpriteKit
 
 protocol InteractiveControl: SKSpriteNode {
-    func setupForInteractiveControl(scene: SKScene)
+    static func setupForInteractiveControl(scene: SKScene?, fileNamed: String)
     
     func specificSetupForInteractiveControl()
 }
 
 extension InteractiveControl {
-    func setupForInteractiveControl(scene: SKScene) {
-        isPaused = false
-        isUserInteractionEnabled = true
-        zPosition = 100
+    static func setupForInteractiveControl(scene: SKScene?, fileNamed: String) {
+        guard let scene = scene else {
+            fatalError("SKScene is nil")
+        }
+        guard let controlScene = SKScene(fileNamed: fileNamed) else {
+            fatalError("Could not load scene named: \(fileNamed)")
+        }
+        guard let control = controlScene.childNode(withName: "Control") as? InteractiveControl else {
+            fatalError("Could not find control in: \(fileNamed)")
+        }
         
-        self.removeFromParent()
-        scene.addChild(self)
-        specificSetupForInteractiveControl()
+        control.isPaused = false
+        control.isUserInteractionEnabled = true
+        control.zPosition = 100
+        control.specificSetupForInteractiveControl()
+        
+        control.removeFromParent()
+        scene.addChild(control)
     }
     
     

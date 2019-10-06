@@ -13,9 +13,17 @@ class GameScene: SKScene {
     
     override func didMove(to view: SKView) {
         
-        guard let scene = SKScene(fileNamed: "Button"),
-            let button = scene.childNode(withName: "Button") as? Button else { return }
-        button.setupForInteractiveControl(scene: self)
-        
+        setupControls()
     }
+    
+    
+    
+    
+    
+    //MARK:- Setup
+    
+    func setupControls() {
+        Button.setupForInteractiveControl(scene: self, fileNamed: "Button")
+    }
+    
 }
