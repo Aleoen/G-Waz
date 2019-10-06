@@ -20,8 +20,6 @@ class GameScene: SKScene {
                 //TODO: refactor to Button
                 button.removeFromParent()
                 button.zPosition = 10
-                button.isUserInteractionEnabled = true
-                button.isPaused = false
                 button.color = SKColor.green
                 
                 addChild(button)
