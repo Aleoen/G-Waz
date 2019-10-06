@@ -9,20 +9,20 @@
 /* Begin PBXBuildFile section */
 		54F97A6E2348E08700A1E78D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F97A6D2348E08700A1E78D /* AppDelegate.swift */; };
 		54F97A702348E08700A1E78D /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 54F97A6F2348E08700A1E78D /* GameScene.sks */; };
-		54F97A722348E08700A1E78D /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 54F97A712348E08700A1E78D /* Actions.sks */; };
 		54F97A742348E08700A1E78D /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F97A732348E08700A1E78D /* GameScene.swift */; };
 		54F97A762348E08700A1E78D /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F97A752348E08700A1E78D /* GameViewController.swift */; };
 		54F97A792348E08700A1E78D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54F97A772348E08700A1E78D /* Main.storyboard */; };
 		54F97A7B2348E08800A1E78D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54F97A7A2348E08800A1E78D /* Assets.xcassets */; };
 		54F97A7E2348E08800A1E78D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54F97A7C2348E08800A1E78D /* LaunchScreen.storyboard */; };
 		54F97A872348E3F600A1E78D /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 54F97A862348E3F600A1E78D /* LICENSE */; };
+		54F97A8A23490B4900A1E78D /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F97A8923490B4900A1E78D /* Button.swift */; };
+		54F97A8C23490BD000A1E78D /* Button.sks in Resources */ = {isa = PBXBuildFile; fileRef = 54F97A8B23490BD000A1E78D /* Button.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		54F97A6A2348E08700A1E78D /* G-Waz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "G-Waz.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		54F97A6D2348E08700A1E78D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		54F97A6F2348E08700A1E78D /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		54F97A712348E08700A1E78D /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		54F97A732348E08700A1E78D /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		54F97A752348E08700A1E78D /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		54F97A782348E08700A1E78D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -31,6 +31,8 @@
 		54F97A7F2348E08800A1E78D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54F97A852348E2FF00A1E78D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		54F97A862348E3F600A1E78D /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		54F97A8923490B4900A1E78D /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		54F97A8B23490BD000A1E78D /* Button.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Button.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,7 +51,7 @@
 			children = (
 				54F97A862348E3F600A1E78D /* LICENSE */,
 				54F97A852348E2FF00A1E78D /* README.md */,
-				54F97A6C2348E08700A1E78D /* Sources */,
+				54F97A6C2348E08700A1E78D /* G-Waz */,
 				54F97A6B2348E08700A1E78D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -62,12 +64,12 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		54F97A6C2348E08700A1E78D /* Sources */ = {
+		54F97A6C2348E08700A1E78D /* G-Waz */ = {
 			isa = PBXGroup;
 			children = (
+				54F97A8823490B1B00A1E78D /* SKNodes */,
 				54F97A6D2348E08700A1E78D /* AppDelegate.swift */,
 				54F97A6F2348E08700A1E78D /* GameScene.sks */,
-				54F97A712348E08700A1E78D /* Actions.sks */,
 				54F97A732348E08700A1E78D /* GameScene.swift */,
 				54F97A752348E08700A1E78D /* GameViewController.swift */,
 				54F97A772348E08700A1E78D /* Main.storyboard */,
@@ -75,7 +77,16 @@
 				54F97A7C2348E08800A1E78D /* LaunchScreen.storyboard */,
 				54F97A7F2348E08800A1E78D /* Info.plist */,
 			);
-			path = Sources;
+			path = "G-Waz";
+			sourceTree = "<group>";
+		};
+		54F97A8823490B1B00A1E78D /* SKNodes */ = {
+			isa = PBXGroup;
+			children = (
+				54F97A8923490B4900A1E78D /* Button.swift */,
+				54F97A8B23490BD000A1E78D /* Button.sks */,
+			);
+			path = SKNodes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,7 +152,7 @@
 				54F97A702348E08700A1E78D /* GameScene.sks in Resources */,
 				54F97A7B2348E08800A1E78D /* Assets.xcassets in Resources */,
 				54F97A7E2348E08800A1E78D /* LaunchScreen.storyboard in Resources */,
-				54F97A722348E08700A1E78D /* Actions.sks in Resources */,
+				54F97A8C23490BD000A1E78D /* Button.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +166,7 @@
 				54F97A742348E08700A1E78D /* GameScene.swift in Sources */,
 				54F97A762348E08700A1E78D /* GameViewController.swift in Sources */,
 				54F97A6E2348E08700A1E78D /* AppDelegate.swift in Sources */,
+				54F97A8A23490B4900A1E78D /* Button.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
