@@ -13,19 +13,9 @@ class GameScene: SKScene {
     
     override func didMove(to view: SKView) {
         
+        guard let scene = SKScene(fileNamed: "Button"),
+            let button = scene.childNode(withName: "Button") as? Button else { return }
+        button.setupForInteractiveControl(scene: self)
         
-        if let scene = SKScene(fileNamed: "Button") {
-            if let button = scene.childNode(withName: "Button") as? Button {
-                
-                //TODO: refactor to Button
-                button.removeFromParent()
-                button.zPosition = 10
-                button.color = SKColor.green
-                
-                addChild(button)
-            }
-        }
     }
-    
-    
 }

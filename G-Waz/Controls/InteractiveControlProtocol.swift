@@ -9,17 +9,19 @@
 import SpriteKit
 
 protocol InteractiveControl: SKSpriteNode {
-    func setupForInteractiveControl()
+    func setupForInteractiveControl(scene: SKScene)
     
     func specificSetupForInteractiveControl()
 }
 
 extension InteractiveControl {
-    func setupForInteractiveControl() {
+    func setupForInteractiveControl(scene: SKScene) {
         isPaused = false
         isUserInteractionEnabled = true
         zPosition = 100
         
+        self.removeFromParent()
+        scene.addChild(self)
         specificSetupForInteractiveControl()
     }
     

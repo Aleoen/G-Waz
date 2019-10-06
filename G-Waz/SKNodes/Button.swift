@@ -8,7 +8,11 @@
 
 import SpriteKit
 
-class Button: SKSpriteNode {
+class Button: SKSpriteNode, InteractiveControl {
+    func specificSetupForInteractiveControl() {
+        color = SKColor.gray
+    }
+    
     
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
