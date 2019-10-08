@@ -9,12 +9,14 @@
 import SpriteKit
 
 protocol InteractiveControl: SKSpriteNode {
+    
     static func setupForInteractiveControl(scene: SKScene?, fileNamed: String, with color: SKColor, and label: String) -> InteractiveControl
     
-    func specificSetupForInteractiveControl()
+    func specificSetupForInteractiveControl(with label: String)
 }
 
 extension InteractiveControl {
+    
     static func setupForInteractiveControl(scene: SKScene?, fileNamed: String, with color: SKColor, and label: String) -> InteractiveControl {
         guard let scene = scene else {
             fatalError("SKScene is nil")
@@ -23,19 +25,22 @@ extension InteractiveControl {
             fatalError("Could not load scene named: \(fileNamed)")
         }
         guard let control = controlScene.childNode(withName: "Control") as? InteractiveControl else {
-            fatalError("Could not find control in: \(fileNamed)")
+            fatalError("Could not find control in: \(fileNamed) scene.")
         }
         
         control.isPaused = false
         control.isUserInteractionEnabled = true
         control.zPosition = 100
         control.color = color
+        control.blendMode = .replace
+//        control.run(SKAction.colorize(with: color, colorBlendFactor: 1.0, duration: 0))
         
         if let labelNode = control.childNode(withName: "Label") as? SKLabelNode{
             labelNode.text = label
+//            labelNode.color = SKColor.white
         }
         
-        control.specificSetupForInteractiveControl()
+        control.specificSetupForInteractiveControl(with: label)
         
         control.removeFromParent()
         scene.addChild(control)
