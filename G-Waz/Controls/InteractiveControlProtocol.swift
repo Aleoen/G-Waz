@@ -31,13 +31,10 @@ extension InteractiveControl {
         control.isPaused = false
         control.isUserInteractionEnabled = true
         control.zPosition = 100
-        control.color = color
-        control.blendMode = .replace
-//        control.run(SKAction.colorize(with: color, colorBlendFactor: 1.0, duration: 0))
+        control.run(SKAction.colorize(with: color, colorBlendFactor: 1.0, duration: 0))
         
         if let labelNode = control.childNode(withName: "Label") as? SKLabelNode{
             labelNode.text = label
-//            labelNode.color = SKColor.white
         }
         
         control.specificSetupForInteractiveControl(with: label)
