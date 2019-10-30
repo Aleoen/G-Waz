@@ -10,16 +10,18 @@ import SpriteKit
 
 protocol InteractiveControl: SKSpriteNode {
     
-    static func setupForInteractiveControl(scene: SKScene?, fileNamed: String, with color: SKColor, and label: String) -> InteractiveControl
+    static func setupForInteractiveControl(parentNode: SKNode?, fileNamed: String, with color: SKColor, and label: String) -> InteractiveControl
     
     func specificSetupForInteractiveControl(with label: String)
 }
 
 extension InteractiveControl {
     
-    static func setupForInteractiveControl(scene: SKScene?, fileNamed: String, with color: SKColor, and label: String) -> InteractiveControl {
-        guard let scene = scene else {
-            fatalError("SKScene is nil")
+    
+    //FIXME: Dont call the scene BUT the SKNode
+    static func setupForInteractiveControl(parentNode: SKNode?, fileNamed: String, with color: SKColor, and label: String) -> InteractiveControl {
+        guard let parentNode = parentNode else {
+            fatalError("parentNode is nil")
         }
         guard let controlScene = SKScene(fileNamed: fileNamed) else {
             fatalError("Could not load scene named: \(fileNamed)")
@@ -40,8 +42,10 @@ extension InteractiveControl {
         control.specificSetupForInteractiveControl(with: label)
         
         control.removeFromParent()
-        scene.addChild(control)
+        parentNode.addChild(control)
         
+        
+        print(parentNode.name)
         return control
     }
     

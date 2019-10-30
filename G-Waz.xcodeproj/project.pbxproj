@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15DF3F9E236A0CFC0044EBF6 /* ForeGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DF3F9D236A0CFC0044EBF6 /* ForeGround.swift */; };
 		5408CCBF2349F24D007F9D06 /* InteractiveControlProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5408CCBE2349F24D007F9D06 /* InteractiveControlProtocol.swift */; };
 		542AF091234F4AF400A0E7DD /* Controls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542AF090234F4AF400A0E7DD /* Controls.swift */; };
 		54F97A6E2348E08700A1E78D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F97A6D2348E08700A1E78D /* AppDelegate.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		15DF3F9D236A0CFC0044EBF6 /* ForeGround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForeGround.swift; sourceTree = "<group>"; };
 		5408CCBE2349F24D007F9D06 /* InteractiveControlProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveControlProtocol.swift; sourceTree = "<group>"; };
 		542AF090234F4AF400A0E7DD /* Controls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controls.swift; sourceTree = "<group>"; };
 		54F97A6A2348E08700A1E78D /* G-Waz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "G-Waz.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,11 +52,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		15DF3F9C236A0CBC0044EBF6 /* Layers */ = {
+			isa = PBXGroup;
+			children = (
+				15DF3F9D236A0CFC0044EBF6 /* ForeGround.swift */,
+			);
+			path = Layers;
+			sourceTree = "<group>";
+		};
 		5408CCBD2349F216007F9D06 /* Controls */ = {
 			isa = PBXGroup;
 			children = (
 				5408CCBE2349F24D007F9D06 /* InteractiveControlProtocol.swift */,
 				542AF090234F4AF400A0E7DD /* Controls.swift */,
+				54F97A8923490B4900A1E78D /* Button.swift */,
+				54F97A8B23490BD000A1E78D /* Button.sks */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -80,8 +92,8 @@
 		54F97A6C2348E08700A1E78D /* G-Waz */ = {
 			isa = PBXGroup;
 			children = (
+				15DF3F9C236A0CBC0044EBF6 /* Layers */,
 				5408CCBD2349F216007F9D06 /* Controls */,
-				54F97A8823490B1B00A1E78D /* SKNodes */,
 				54F97A6D2348E08700A1E78D /* AppDelegate.swift */,
 				54F97A6F2348E08700A1E78D /* GameScene.sks */,
 				54F97A732348E08700A1E78D /* GameScene.swift */,
@@ -92,15 +104,6 @@
 				54F97A7F2348E08800A1E78D /* Info.plist */,
 			);
 			path = "G-Waz";
-			sourceTree = "<group>";
-		};
-		54F97A8823490B1B00A1E78D /* SKNodes */ = {
-			isa = PBXGroup;
-			children = (
-				54F97A8923490B4900A1E78D /* Button.swift */,
-				54F97A8B23490BD000A1E78D /* Button.sks */,
-			);
-			path = SKNodes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,6 +180,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15DF3F9E236A0CFC0044EBF6 /* ForeGround.swift in Sources */,
 				5408CCBF2349F24D007F9D06 /* InteractiveControlProtocol.swift in Sources */,
 				54F97A742348E08700A1E78D /* GameScene.swift in Sources */,
 				54F97A762348E08700A1E78D /* GameViewController.swift in Sources */,

@@ -15,8 +15,17 @@ import SpriteKit
 class Controls : SKNode {
     var buttons: [Button] = [Button]()
     
-    func add(button: Button) {
+
+    override init() {
+        super.init()
+        name = "Controls"
         
+        let buttonA = Button.setupForInteractiveControl(parentNode: self, fileNamed: "Button", with: #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1), and: "A") as? Button
+        buttonA?.position = CGPoint(x: 0, y: 0)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     
