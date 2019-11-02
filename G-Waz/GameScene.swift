@@ -11,24 +11,31 @@ import SpriteKit
 
 class GameScene: SKScene {
     
-    //MARK:- Variables
+    //MARK:- VARIABLES
+    var cameraNode: SKCameraNode!
     var foreGround: ForeGround!
-    
-    
+//    var middleGround: MiddleGround!
+//    var backGround: BackGround!
     
     override func didMove(to view: SKView) {
         
         setupLayers()
+        
+        print(view.frame) // <- Real size of screen
     }
     
     
     
     
     
-    //MARK:- Setup
+    //MARK:- SETUPS
     func setupLayers() {
+        cameraNode = SKCameraNode()
+        camera = cameraNode
+        addChild(cameraNode)
+        
         foreGround = ForeGround()
-        addChild(foreGround)
+        cameraNode.addChild(foreGround)
     }
     
     

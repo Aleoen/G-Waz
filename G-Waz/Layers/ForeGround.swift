@@ -13,18 +13,23 @@ Node managing Controls and Head Up Display (HUD)
 */
 class ForeGround: SKNode {
     
-    //MARK:- Variables
+    //MARK:- VARIABLES
     var controls: SKNode!
 
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
+    
+    //MARK:- INIT
     override init() {
         super.init()
-        self.name = "ForeGround"
+        
+        name = nodeName.ForeGround
+        zPosition = 10
         
         controls = Controls()
         addChild(controls)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
