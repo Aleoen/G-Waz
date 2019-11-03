@@ -13,9 +13,12 @@ import SpriteKit
  */
 class Controls : SKNode {
     
+    //MARK:- CONSTANTS
+    let offset = 30
+    
     //MARK:- VARIABLES
     var buttons: [Button] = [Button]()
-    
+    var view: SKView!
     
     
     
@@ -25,9 +28,10 @@ class Controls : SKNode {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override init() {
+    init(view: SKView) {
         super.init()
         
+        self.view = view
         name = nodeName.Controls
         
         buttons.append(Button.setupForInteractiveControl(parentNode: self, fileNamed: "Button", with: SKColor.blue, and: "X") as! Button)
@@ -35,6 +39,8 @@ class Controls : SKNode {
         buttons.append(Button.setupForInteractiveControl(parentNode: self, fileNamed: "Button", with: SKColor.green, and: "Y") as! Button)
 
         sortButton()
+        
+        updateVerticalPosition()
     }
     
     func sortButton() {
@@ -56,6 +62,13 @@ class Controls : SKNode {
         if buttons.count >= 2 {
             
         }
+        
+    }
+    
+    // MARK:- UPDATE
+    func updateVerticalPosition() {
+        position.y = -view.frame.height/2
+        
         
     }
     

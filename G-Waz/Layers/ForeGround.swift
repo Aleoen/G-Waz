@@ -15,18 +15,30 @@ class ForeGround: SKNode {
     
     //MARK:- VARIABLES
     var controls: SKNode!
+    var view: SKView!
 
     
     
     //MARK:- INIT
-    override init() {
+    init(view: SKView) {
         super.init()
+        self.view = view
         
         name = nodeName.ForeGround
         zPosition = 10
         
-        controls = Controls()
+        controls = Controls(view: view)
         addChild(controls)
+        
+        
+        
+        let shape = SKShapeNode(rect: view.frame)
+          shape.strokeColor = SKColor.red
+        shape.lineWidth = 1.0
+          addChild(shape)
+        print(shape.position)
+        print(shape.frame)
+        
     }
     
     required init?(coder aDecoder: NSCoder) {

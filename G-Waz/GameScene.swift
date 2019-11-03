@@ -9,7 +9,9 @@
 import SpriteKit
 
 
+
 class GameScene: SKScene {
+    
     
     //MARK:- VARIABLES
     var cameraNode: SKCameraNode!
@@ -18,10 +20,9 @@ class GameScene: SKScene {
 //    var backGround: BackGround!
     
     override func didMove(to view: SKView) {
+        setupSceneSize()
         
         setupLayers()
-        
-        print(view.frame) // <- Real size of screen
     }
     
     
@@ -29,13 +30,23 @@ class GameScene: SKScene {
     
     
     //MARK:- SETUPS
+    /**
+     Set scene size to match the screen size in points to enable accurate positionning of nodes.
+     */
+    func setupSceneSize() {
+        size = UIScreen.main.bounds.size
+    }
+    
     func setupLayers() {
+        // Create layers
         cameraNode = SKCameraNode()
         camera = cameraNode
         addChild(cameraNode)
         
-        foreGround = ForeGround()
+        foreGround = ForeGround(view: view!)
         cameraNode.addChild(foreGround)
+        
+        // Setup layers and nodes in layers' positions
     }
     
     

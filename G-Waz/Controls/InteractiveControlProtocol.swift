@@ -45,7 +45,7 @@ extension InteractiveControl {
         parentNode.addChild(control)
         
         
-        print(parentNode.name)
+        print("InteractiveControl named: \(parentNode.name!) and labeled: \(label) added.")
         return control
     }
     
