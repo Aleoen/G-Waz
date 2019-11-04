@@ -14,9 +14,12 @@ import SpriteKit
 class Controls : SKNode {
     
     //MARK:- CONSTANTS
-    let offset = 30
+    
+    let offset = CGFloat(30)
+    let buttonSpace = CGFloat(10)
     
     //MARK:- VARIABLES
+    
     var buttons: [Button] = [Button]()
     var view: SKView!
     
@@ -24,23 +27,21 @@ class Controls : SKNode {
     
     
     //MARK:- INIT
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(view: SKView) {
+    override init() {
         super.init()
-        
-        self.view = view
         name = nodeName.Controls
         
         buttons.append(Button.setupForInteractiveControl(parentNode: self, fileNamed: "Button", with: SKColor.blue, and: "X") as! Button)
         buttons.append(Button.setupForInteractiveControl(parentNode: self, fileNamed: "Button", with: SKColor.orange, and: "Z") as! Button)
         buttons.append(Button.setupForInteractiveControl(parentNode: self, fileNamed: "Button", with: SKColor.green, and: "Y") as! Button)
+    
 
         sortButton()
-        
-        updateVerticalPosition()
     }
     
     func sortButton() {
@@ -53,8 +54,9 @@ class Controls : SKNode {
             buttons[0].position = CGPoint(x: buttons[0].size.width/2,y: 10)
             buttons[1].position = CGPoint(x: -buttons[1].size.width/2,y: -10)
         case 3:
-            buttons[0].position = CGPoint(x: buttons[0].size.width,y: 20)
-            buttons[2].position = CGPoint(x: -buttons[2].size.width,y: -20)
+            buttons[0].position = CGPoint(x: 0,y: 150)
+            buttons[1].position = CGPoint(x: -buttons[0].size.width - buttonSpace,y: 100)
+            buttons[2].position = CGPoint(x: buttons[1].position.x - buttons[1].size.width-buttonSpace,y: 50)
         default:
             fatalError("Unable to sort: To many buttons")
         }
@@ -66,10 +68,12 @@ class Controls : SKNode {
     }
     
     // MARK:- UPDATE
-    func updateVerticalPosition() {
-        position.y = -view.frame.height/2
-        
-        
+    func updatePosition() {
+        guard let scene = scene else {
+            fatalError("No scene found to define Controls position")
+        }
+        position = CGPoint(
+            x: scene.frame.width/2 - offset,
+            y: -scene.frame.height/2 + offset )
     }
-    
 }

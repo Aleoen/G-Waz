@@ -14,15 +14,18 @@ class GameScene: SKScene {
     
     
     //MARK:- VARIABLES
+    
     var cameraNode: SKCameraNode!
     var foreGround: ForeGround!
 //    var middleGround: MiddleGround!
 //    var backGround: BackGround!
     
     override func didMove(to view: SKView) {
-        setupSceneSize()
-        
         setupLayers()
+    }
+    
+    override func update(_ currentTime: TimeInterval) {
+        foreGround.controls.updatePosition()
     }
     
     
@@ -30,23 +33,22 @@ class GameScene: SKScene {
     
     
     //MARK:- SETUPS
-    /**
-     Set scene size to match the screen size in points to enable accurate positionning of nodes.
-     */
-    func setupSceneSize() {
-        size = UIScreen.main.bounds.size
-    }
     
     func setupLayers() {
         // Create layers
         cameraNode = SKCameraNode()
-        camera = cameraNode
+        cameraNode.position = CGPoint.zero
         addChild(cameraNode)
+        camera = cameraNode
         
-        foreGround = ForeGround(view: view!)
+        foreGround = ForeGround()
         cameraNode.addChild(foreGround)
         
+        
+        
         // Setup layers and nodes in layers' positions
+        
+        foreGround.controls.updatePosition()
     }
     
     
