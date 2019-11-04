@@ -15,16 +15,13 @@ class Controls : SKNode {
     
     //MARK:- CONSTANTS
     
-    let offset = CGFloat(30)
-    let buttonSpace = CGFloat(10)
+    let offset = CGFloat(5)
+    let buttonSpace = CGPoint(x: 80, y: 50)
     
     //MARK:- VARIABLES
     
     var buttons: [Button] = [Button]()
     var view: SKView!
-    
-    
-    
     
     //MARK:- INIT
     
@@ -35,39 +32,26 @@ class Controls : SKNode {
     override init() {
         super.init()
         name = nodeName.Controls
-        
-        buttons.append(Button.setupForInteractiveControl(parentNode: self, fileNamed: "Button", with: SKColor.blue, and: "X") as! Button)
-        buttons.append(Button.setupForInteractiveControl(parentNode: self, fileNamed: "Button", with: SKColor.orange, and: "Z") as! Button)
-        buttons.append(Button.setupForInteractiveControl(parentNode: self, fileNamed: "Button", with: SKColor.green, and: "Y") as! Button)
-    
-
-        sortButton()
+        setupButtons()
     }
     
-    func sortButton() {
-        let numberOfButtons = buttons.count
+    //MARK:- SETUPS
+    
+    func setupButtons() {
+        buttons.append(Button.setupForInteractiveControl(fileNamed: "Button", with: #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1), and: "0") as! Button)
+        buttons.append(Button.setupForInteractiveControl(fileNamed: "Button", with: #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1), and: "X") as! Button)
+        buttons.append(Button.setupForInteractiveControl(fileNamed: "Button", with: #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1), and: "A") as! Button)
         
-        switch numberOfButtons {
-        case 0,1:
-            print("No need to sort")
-        case 2:
-            buttons[0].position = CGPoint(x: buttons[0].size.width/2,y: 10)
-            buttons[1].position = CGPoint(x: -buttons[1].size.width/2,y: -10)
-        case 3:
-            buttons[0].position = CGPoint(x: 0,y: 150)
-            buttons[1].position = CGPoint(x: -buttons[0].size.width - buttonSpace,y: 100)
-            buttons[2].position = CGPoint(x: buttons[1].position.x - buttons[1].size.width-buttonSpace,y: 50)
-        default:
-            fatalError("Unable to sort: To many buttons")
+        
+        for button in buttons {
+            addChild(button)
         }
         
-        if buttons.count >= 2 {
-            
-        }
-        
+        setButtonsPosition()
     }
     
     // MARK:- UPDATE
+    
     func updatePosition() {
         guard let scene = scene else {
             fatalError("No scene found to define Controls position")
@@ -76,4 +60,22 @@ class Controls : SKNode {
             x: scene.frame.width/2 - offset,
             y: -scene.frame.height/2 + offset )
     }
+    
+    // MARK:- METHODS
+    
+    func setButtonsPosition() {
+        let numberOfButtons = buttons.count
+           
+        switch numberOfButtons {
+        case 0,1:
+            print("No need to sort")
+        case 2,3:
+            for index in 0...numberOfButtons-1 {
+                buttons[index].position = CGPoint(x: -CGFloat(index) * buttonSpace.x, y: CGFloat(numberOfButtons - 1 - index) * buttonSpace.y)
+            }
+        default:
+           fatalError("Unable to sort: To many buttons")
+       }
+    }
+    
 }
