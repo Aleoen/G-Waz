@@ -56,6 +56,7 @@ class Controls : SKNode {
     func setupPad() {
         pad = Pad.setupForInteractiveControl(fileNamed: "Pad", with: nil, and: "None") as! Pad
         addChild(pad)
+        pad.setScale(0.5)
 
     }
     

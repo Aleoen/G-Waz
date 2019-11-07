@@ -13,8 +13,15 @@ class Button: SKSpriteNode, InteractiveControl {
     
     
     
-    func specificSetupForInteractiveControl(with label: String) {
+    func specificSetupForInteractiveControl(with label: String, with color: SKColor?) {
         self.label = label
+        
+        if let color = color {
+            run(SKAction.colorize(with: color, colorBlendFactor: 1.0, duration: 0))
+        }
+        if let labelNode = childNode(withName: "Label") as? SKLabelNode{
+            labelNode.text = label
+        }
     }
     
     

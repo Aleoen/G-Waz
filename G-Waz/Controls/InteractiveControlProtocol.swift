@@ -12,7 +12,7 @@ protocol InteractiveControl: SKSpriteNode {
     
     static func setupForInteractiveControl(fileNamed: String, with color: SKColor?, and label: String) -> InteractiveControl
     
-    func specificSetupForInteractiveControl(with label: String)
+    func specificSetupForInteractiveControl(with label: String, with color: SKColor?)
 }
 
 extension InteractiveControl {
@@ -24,22 +24,15 @@ extension InteractiveControl {
         guard let control = controlScene.childNode(withName: "Control") as? InteractiveControl else {
             fatalError("Could not find control in: \(fileNamed) scene.")
         }
-        
-        control.isPaused = false
-        control.isUserInteractionEnabled = true
+                
+        controlScene.enumerateChildNodes(withName: "//*") { (node, _) in
+            node.isPaused = false
+            node.isUserInteractionEnabled = true
+        }
         control.zPosition = 10
-        
-        //TODO: this must me used to colorize children nodes.
-        if let color = color {
-                  control.run(SKAction.colorize(with: color, colorBlendFactor: 1.0, duration: 0))
-        }
-        
-        if let labelNode = control.childNode(withName: "Label") as? SKLabelNode{
-            labelNode.text = label
-        }
-        control.specificSetupForInteractiveControl(with: label)
-        
         control.removeFromParent()
+        
+        control.specificSetupForInteractiveControl(with: label, with: color)
         return control
     }
     

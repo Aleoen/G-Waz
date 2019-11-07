@@ -10,8 +10,8 @@ import SpriteKit
 
 class Pad: SKSpriteNode, InteractiveControl {
     
-    func specificSetupForInteractiveControl(with label: String) {
-        // No action required
+    func specificSetupForInteractiveControl(with label: String, with color: SKColor?) {
+                
     }
     
 }
