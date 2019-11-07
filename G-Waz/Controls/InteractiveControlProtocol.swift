@@ -10,14 +10,14 @@ import SpriteKit
 
 protocol InteractiveControl: SKSpriteNode {
     
-    static func setupForInteractiveControl(fileNamed: String, with color: SKColor, and label: String) -> InteractiveControl
+    static func setupForInteractiveControl(fileNamed: String, with color: SKColor?, and label: String) -> InteractiveControl
     
     func specificSetupForInteractiveControl(with label: String)
 }
 
 extension InteractiveControl {
     
-    static func setupForInteractiveControl(fileNamed: String, with color: SKColor, and label: String) -> InteractiveControl {
+    static func setupForInteractiveControl(fileNamed: String, with color: SKColor?, and label: String) -> InteractiveControl {
         guard let controlScene = SKScene(fileNamed: fileNamed) else {
             fatalError("Could not load scene named: \(fileNamed)")
         }
@@ -28,7 +28,11 @@ extension InteractiveControl {
         control.isPaused = false
         control.isUserInteractionEnabled = true
         control.zPosition = 10
-        control.run(SKAction.colorize(with: color, colorBlendFactor: 1.0, duration: 0))
+        
+        //TODO: this must me used to colorize children nodes.
+        if let color = color {
+                  control.run(SKAction.colorize(with: color, colorBlendFactor: 1.0, duration: 0))
+        }
         
         if let labelNode = control.childNode(withName: "Label") as? SKLabelNode{
             labelNode.text = label

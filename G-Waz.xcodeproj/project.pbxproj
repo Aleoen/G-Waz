@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		150762DB236DDA2B003D5628 /* nodeNameConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150762DA236DDA2B003D5628 /* nodeNameConstants.swift */; };
+		150762DD2372A7E3003D5628 /* Pad.sks in Resources */ = {isa = PBXBuildFile; fileRef = 150762DC2372A7E3003D5628 /* Pad.sks */; };
+		150762DF23734F2C003D5628 /* Pad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150762DE23734F2C003D5628 /* Pad.swift */; };
 		15DF3F9E236A0CFC0044EBF6 /* ForeGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DF3F9D236A0CFC0044EBF6 /* ForeGround.swift */; };
 		5408CCBF2349F24D007F9D06 /* InteractiveControlProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5408CCBE2349F24D007F9D06 /* InteractiveControlProtocol.swift */; };
 		542AF091234F4AF400A0E7DD /* Controls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542AF090234F4AF400A0E7DD /* Controls.swift */; };
@@ -25,6 +27,8 @@
 
 /* Begin PBXFileReference section */
 		150762DA236DDA2B003D5628 /* nodeNameConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nodeNameConstants.swift; sourceTree = "<group>"; };
+		150762DC2372A7E3003D5628 /* Pad.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Pad.sks; sourceTree = "<group>"; };
+		150762DE23734F2C003D5628 /* Pad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pad.swift; sourceTree = "<group>"; };
 		15DF3F9D236A0CFC0044EBF6 /* ForeGround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForeGround.swift; sourceTree = "<group>"; };
 		5408CCBE2349F24D007F9D06 /* InteractiveControlProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveControlProtocol.swift; sourceTree = "<group>"; };
 		542AF090234F4AF400A0E7DD /* Controls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controls.swift; sourceTree = "<group>"; };
@@ -73,10 +77,12 @@
 		5408CCBD2349F216007F9D06 /* Controls */ = {
 			isa = PBXGroup;
 			children = (
-				542AF090234F4AF400A0E7DD /* Controls.swift */,
 				5408CCBE2349F24D007F9D06 /* InteractiveControlProtocol.swift */,
+				542AF090234F4AF400A0E7DD /* Controls.swift */,
 				54F97A8923490B4900A1E78D /* Button.swift */,
 				54F97A8B23490BD000A1E78D /* Button.sks */,
+				150762DE23734F2C003D5628 /* Pad.swift */,
+				150762DC2372A7E3003D5628 /* Pad.sks */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -180,6 +186,7 @@
 				54F97A702348E08700A1E78D /* GameScene.sks in Resources */,
 				54F97A7B2348E08800A1E78D /* Assets.xcassets in Resources */,
 				54F97A7E2348E08800A1E78D /* LaunchScreen.storyboard in Resources */,
+				150762DD2372A7E3003D5628 /* Pad.sks in Resources */,
 				54F97A8C23490BD000A1E78D /* Button.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -194,6 +201,7 @@
 				15DF3F9E236A0CFC0044EBF6 /* ForeGround.swift in Sources */,
 				5408CCBF2349F24D007F9D06 /* InteractiveControlProtocol.swift in Sources */,
 				54F97A742348E08700A1E78D /* GameScene.swift in Sources */,
+				150762DF23734F2C003D5628 /* Pad.swift in Sources */,
 				54F97A762348E08700A1E78D /* GameViewController.swift in Sources */,
 				542AF091234F4AF400A0E7DD /* Controls.swift in Sources */,
 				54F97A6E2348E08700A1E78D /* AppDelegate.swift in Sources */,
