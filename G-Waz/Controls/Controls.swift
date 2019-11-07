@@ -32,7 +32,7 @@ class Controls : SKNode {
     
     override init() {
         super.init()
-        name = nodeName.Controls
+        name = nodeName.controls
         setupButtons()
         setupPad()
     }
@@ -54,7 +54,7 @@ class Controls : SKNode {
     }
     
     func setupPad() {
-        pad = Pad.setupForInteractiveControl(fileNamed: "Pad", with: nil, and: "None") as! Pad
+        pad = (Pad.setupForInteractiveControl(fileNamed: "Pad", with: #colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1), and: "None") as! Pad)
         addChild(pad)
         pad.setScale(0.5)
 

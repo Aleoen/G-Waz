@@ -24,7 +24,7 @@ class ForeGround: SKNode {
     
     override init() {
         super.init()
-        name = nodeName.ForeGround
+        name = nodeName.foreGround
         zPosition = 10
         
         controls = Controls()

@@ -11,7 +11,11 @@ import SpriteKit
 class Pad: SKSpriteNode, InteractiveControl {
     
     func specificSetupForInteractiveControl(with label: String, with color: SKColor?) {
+        if let color = color {
+            enumerateChildNodes(withName: "/Pad*") { (node, _) in
+                node.run(SKAction.colorize(with: color, colorBlendFactor: 1.0, duration: 0))
+            }
+        }
                 
     }
-    
 }
