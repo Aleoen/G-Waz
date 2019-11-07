@@ -9,8 +9,12 @@
 import Foundation
 
 enum nodeName {
-    static let ForeGround = "ForeGround"
-    static let MiddleGround = "MiddleGround"
-    static let BackGround = "BackGround"
-    static let Controls = "Controls"
+    static let foreGround = "ForeGround"
+    static let middleGround = "MiddleGround"
+    static let backGround = "BackGround"
+    static let controls = "Controls"
+}
+
+enum padDirection {
+    case up, down, right, left, center
 }
