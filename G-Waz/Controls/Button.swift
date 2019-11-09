@@ -10,11 +10,13 @@ import SpriteKit
 
 class Button: SKSpriteNode, ElementaryControl {
     var label: String!
+    var completions: [()->Void]!
     
     
     
-    func specificSetupForElementaryControl(with label: String, with color: SKColor?) {
+    func specificSetupForElementaryControl(with label: String, with color: SKColor?, perform completions: [() -> Void]) {
         self.label = label
+        self.completions = completions
         
         if let color = color {
             run(SKAction.colorize(with: color, colorBlendFactor: 1.0, duration: 0))
@@ -36,8 +38,15 @@ class Button: SKSpriteNode, ElementaryControl {
         let touchedAction = SKAction.sequence([scaleIn,scaleOut])
         
         print("Touched \(label!)")
+        completions[0]()
         
         run(touchedAction)
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
+        
+        completions[1]()
     }
     
     

@@ -18,6 +18,14 @@ class Controls : SKNode {
     let offset = CGPoint(x: 5, y: 40)
     let buttonSpace = CGPoint(x: 60, y: 30)
     
+    let testCompletions = [{
+    () -> Void in
+    print("Ahhhh")
+},{
+        () -> Void in
+        print("Brrrrrrr")
+    }]
+    
     //MARK:- VARIABLES
     
     var buttons: [Button] = [Button]()
@@ -40,9 +48,9 @@ class Controls : SKNode {
     //MARK:- SETUPS
     
     func setupButtons() {
-        buttons.append(Button.setupForElementaryControl(fileNamed: "Button", with: #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1), and: "0") as! Button)
-        buttons.append(Button.setupForElementaryControl(fileNamed: "Button", with: #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1), and: "X") as! Button)
-        buttons.append(Button.setupForElementaryControl(fileNamed: "Button", with: #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1), and: "A") as! Button)
+        buttons.append(Button.setupForElementaryControl(fileNamed: "Button", with: #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1), and: "0", perform: testCompletions) as! Button)
+        buttons.append(Button.setupForElementaryControl(fileNamed: "Button", with: #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1), and: "X", perform: testCompletions) as! Button)
+        buttons.append(Button.setupForElementaryControl(fileNamed: "Button", with: #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1), and: "A", perform: testCompletions) as! Button)
         
         for button in buttons {
             addChild(button)
@@ -54,7 +62,7 @@ class Controls : SKNode {
     }
     
     func setupPad() {
-        pad = (Pad.setupForElementaryControl(fileNamed: "Pad", with: #colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1), and: "None") as! Pad)
+        pad = (Pad.setupForElementaryControl(fileNamed: "Pad", with: #colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1), and: "None", perform: testCompletions) as! Pad)
         addChild(pad)
         pad.setScale(0.5)
 

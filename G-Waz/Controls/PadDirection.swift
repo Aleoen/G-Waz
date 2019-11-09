@@ -11,7 +11,7 @@ import SpriteKit
 class PadDirection: SKSpriteNode, ElementaryControl {
     
     
-    func specificSetupForElementaryControl(with label: String, with color: SKColor?) {
+    func specificSetupForElementaryControl(with label: String, with color: SKColor?, perform completions: [() -> Void]) {
         
     }
     

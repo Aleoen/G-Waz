@@ -72,6 +72,17 @@
 			path = "New Group";
 			sourceTree = "<group>";
 		};
+		150762E623770BE4003D5628 /* SKS Files */ = {
+			isa = PBXGroup;
+			children = (
+				150762E42374B924003D5628 /* PadCenter.sks */,
+				54F97A8B23490BD000A1E78D /* Button.sks */,
+				150762DC2372A7E3003D5628 /* Pad.sks */,
+				150762E22374B8AB003D5628 /* PadDirection.sks */,
+			);
+			path = "SKS Files";
+			sourceTree = "<group>";
+		};
 		15DF3F9C236A0CBC0044EBF6 /* Layers */ = {
 			isa = PBXGroup;
 			children = (
@@ -83,15 +94,12 @@
 		5408CCBD2349F216007F9D06 /* Controls */ = {
 			isa = PBXGroup;
 			children = (
+				150762E623770BE4003D5628 /* SKS Files */,
 				5408CCBE2349F24D007F9D06 /* ElementaryControlProtocol.swift */,
 				542AF090234F4AF400A0E7DD /* Controls.swift */,
 				54F97A8923490B4900A1E78D /* Button.swift */,
-				54F97A8B23490BD000A1E78D /* Button.sks */,
 				150762DE23734F2C003D5628 /* Pad.swift */,
 				150762E02374AC04003D5628 /* PadDirection.swift */,
-				150762DC2372A7E3003D5628 /* Pad.sks */,
-				150762E22374B8AB003D5628 /* PadDirection.sks */,
-				150762E42374B924003D5628 /* PadCenter.sks */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
