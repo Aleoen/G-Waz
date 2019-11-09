@@ -8,13 +8,21 @@
 
 import SpriteKit
 
-class PadDirection: SKSpriteNode {
+class PadDirection: SKSpriteNode, ElementaryControl {
+    
+    
+    func specificSetupForElementaryControl(with label: String, with color: SKColor?) {
+        
+    }
+    
     
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print(color)
         print("Go west!")
         run(SKAction.sequence([
             SKAction.colorize(with: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), colorBlendFactor: 0.5, duration: 0.1),
+            SKAction.colorize(with: self.color, colorBlendFactor: 1, duration: 0.1),
         ]))
     }
 }

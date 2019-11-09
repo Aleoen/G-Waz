@@ -8,12 +8,12 @@
 
 import SpriteKit
 
-class Button: SKSpriteNode, InteractiveControl {
+class Button: SKSpriteNode, ElementaryControl {
     var label: String!
     
     
     
-    func specificSetupForInteractiveControl(with label: String, with color: SKColor?) {
+    func specificSetupForElementaryControl(with label: String, with color: SKColor?) {
         self.label = label
         
         if let color = color {
