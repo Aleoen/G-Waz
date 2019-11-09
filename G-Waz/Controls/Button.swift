@@ -14,7 +14,7 @@ class Button: SKSpriteNode, ElementaryControl {
     
     
     
-    func specificSetupForElementaryControl(with label: String, with color: SKColor?, perform completions: [() -> Void]) {
+    func specificSetupForElementaryControl(with label: String, with color: SKColor?, perform completions: [() -> Void]?) {
         self.label = label
         self.completions = completions
         

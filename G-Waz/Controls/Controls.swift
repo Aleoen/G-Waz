@@ -15,8 +15,10 @@ class Controls : SKNode {
     
     //MARK:- CONSTANTS
     
+    let π = CGFloat(CFloat.pi) // to type π press ALT + p
     let offset = CGPoint(x: 5, y: 40)
     let buttonSpace = CGPoint(x: 60, y: 30)
+    let pad = SKNode()
     
     let testCompletions = [{
     () -> Void in
@@ -29,7 +31,7 @@ class Controls : SKNode {
     //MARK:- VARIABLES
     
     var buttons: [Button] = [Button]()
-    var pad: Pad!
+    var padDirections: [PadDirection] = [PadDirection]()
     var view: SKView!
     
     //MARK:- INIT
@@ -58,16 +60,25 @@ class Controls : SKNode {
         }
         
         setButtonsPosition()
-        
     }
     
     func setupPad() {
-        pad = (Pad.setupForElementaryControl(fileNamed: "Pad", with: #colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1), and: "None", perform: testCompletions) as! Pad)
-        addChild(pad)
+        padDirections.append(PadDirection.setupForElementaryControl(fileNamed: "PadDirection", with: #colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1), and: "None", perform: testCompletions) as! PadDirection)
+        padDirections.append(PadDirection.setupForElementaryControl(fileNamed: "PadDirection", with: #colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1), and: "None", perform: testCompletions) as! PadDirection)
+        padDirections.append(PadDirection.setupForElementaryControl(fileNamed: "PadDirection", with: #colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1), and: "None", perform: testCompletions) as! PadDirection)
+        padDirections.append(PadDirection.setupForElementaryControl(fileNamed: "PadDirection", with: #colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1), and: "None", perform: testCompletions) as! PadDirection)
+        padDirections.append(PadDirection.setupForElementaryControl(fileNamed: "PadCenter", with: #colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1), and: "None", perform: nil) as! PadDirection)
+        
+        for padDirection in padDirections {
+            pad.addChild(padDirection)
+        }
+        
         pad.setScale(0.5)
-
+        setPadDirectionPosition()
+        
+        addChild(pad)
     }
-    
+        
     // MARK:- UPDATE
     
     func updatePosition() {
@@ -85,7 +96,7 @@ class Controls : SKNode {
     
     // MARK:- METHODS
     
-    func setButtonsPosition() {
+    private func setButtonsPosition() {
         let numberOfButtons = buttons.count
            
         switch numberOfButtons {
@@ -104,4 +115,21 @@ class Controls : SKNode {
        }
     }
     
+    private func setPadDirectionPosition() {
+        guard padDirections.count == 5 else {
+            fatalError("Number of pad direction is not 5.")
+        }
+        
+        let padWidth = padDirections[0].size.width
+        let padHeight = padDirections[0].size.height
+        
+        padDirections[0].position = CGPoint(x: padHeight, y: padWidth + padHeight)
+        padDirections[1].zRotation = -π / 2
+        padDirections[1].position = CGPoint(x: padHeight + padWidth, y: padWidth + padHeight)
+        padDirections[2].zRotation = -π
+        padDirections[2].position = CGPoint(x: padHeight + padWidth, y: padHeight)
+        padDirections[3].zRotation = π / 2
+        padDirections[3].position = CGPoint(x: padHeight, y: padHeight)
+        padDirections[4].position = CGPoint(x: padHeight, y: padHeight)
+    }
 }

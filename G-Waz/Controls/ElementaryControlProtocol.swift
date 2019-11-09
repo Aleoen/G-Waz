@@ -10,14 +10,14 @@ import SpriteKit
 
 protocol ElementaryControl: SKSpriteNode {
     
-    static func setupForElementaryControl(fileNamed: String, with color: SKColor?, and label: String, perform completions : [() -> Void]) -> ElementaryControl
+    static func setupForElementaryControl(fileNamed: String, with color: SKColor?, and label: String, perform completions : [() -> Void]?) -> ElementaryControl
     
-    func specificSetupForElementaryControl(with label: String, with color: SKColor?, perform completions: [() -> Void])
+    func specificSetupForElementaryControl(with label: String, with color: SKColor?, perform completions: [() -> Void]?)
 }
 
 extension ElementaryControl {
     
-    static func setupForElementaryControl(fileNamed: String, with color: SKColor?, and label: String, perform completions: [() -> Void]) -> ElementaryControl {
+    static func setupForElementaryControl(fileNamed: String, with color: SKColor?, and label: String, perform completions: [() -> Void]?) -> ElementaryControl {
         guard let controlScene = SKScene(fileNamed: fileNamed) else {
             fatalError("Could not load scene named: \(fileNamed)")
         }
