@@ -10,6 +10,12 @@ import SpriteKit
 
 class PadDirection: SKSpriteNode, ElementaryControl {
     
+    //MARK: - CONSTANTS
+    
+    let scaleIn = SKAction.scale(to: 0.95, duration: 0.05)
+    let scaleOut = SKAction.scale(to: 1.0, duration: 0.05)
+    
+    //MARK: - SETUP
     
     func specificSetupForElementaryControl(with label: String, with color: SKColor?, perform completions: [() -> Void]?) {
         if let color = color {
@@ -17,13 +23,9 @@ class PadDirection: SKSpriteNode, ElementaryControl {
         }
     }
     
-    
+    //MARK:- METHODS
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        run(SKAction.sequence([
-            SKAction.colorize(with: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), colorBlendFactor: 0.5, duration: 0.1),
-            SKAction.colorize(with: self.color, colorBlendFactor: 1, duration: 0.1),
-        ]))
-        //FIXME: Color turns to black when repeating clics
-    }
+        run(SKAction.sequence([scaleIn, scaleOut]))
+            }
 }

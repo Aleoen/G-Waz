@@ -9,10 +9,19 @@
 import SpriteKit
 
 class Button: SKSpriteNode, ElementaryControl {
+    
+    // MARK:- CONSTANTS
+    
+    let scaleIn = SKAction.scale(by: 0.8, duration: 0.05)
+    let scaleOut = SKAction.scale(by: 1.25, duration: 0.05)
+    
+    
+    // MARK:- VARIABLES
+    
     var label: String!
     var completions: [()->Void]!
     
-    
+    //MARK: SETUP
     
     func specificSetupForElementaryControl(with label: String, with color: SKColor?, perform completions: [() -> Void]?) {
         self.label = label
@@ -29,24 +38,21 @@ class Button: SKSpriteNode, ElementaryControl {
     
     
     
-    
+    //MARK: METHODS
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
-        let scaleIn = SKAction.scale(by: 0.8, duration: 0.05)
-        let scaleOut = scaleIn.reversed()
-        let touchedAction = SKAction.sequence([scaleIn,scaleOut])
         
         print("Touched \(label!)")
         completions[0]()
-        
-        run(touchedAction)
+        run(scaleIn)
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
         
         completions[1]()
+        run(scaleOut)
     }
     
     

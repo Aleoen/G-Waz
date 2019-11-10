@@ -123,13 +123,13 @@ class Controls : SKNode {
         let padWidth = padDirections[0].size.width
         let padHeight = padDirections[0].size.height
         
-        padDirections[0].position = CGPoint(x: padHeight, y: padWidth + padHeight)
+        padDirections[0].position = CGPoint(x: padHeight + padWidth/2, y: padWidth + padHeight)
         padDirections[1].zRotation = -π / 2
-        padDirections[1].position = CGPoint(x: padHeight + padWidth, y: padWidth + padHeight)
+        padDirections[1].position = CGPoint(x: padHeight + padWidth, y: padWidth/2 + padHeight)
         padDirections[2].zRotation = -π
-        padDirections[2].position = CGPoint(x: padHeight + padWidth, y: padHeight)
+        padDirections[2].position = CGPoint(x: padHeight + padWidth/2, y: padHeight)
         padDirections[3].zRotation = π / 2
-        padDirections[3].position = CGPoint(x: padHeight, y: padHeight)
-        padDirections[4].position = CGPoint(x: padHeight, y: padHeight)
+        padDirections[3].position = CGPoint(x: padHeight, y: padHeight + padWidth/2)
+        padDirections[4].position = CGPoint(x: padHeight + padWidth/2, y: padHeight + padWidth/2)
     }
 }
