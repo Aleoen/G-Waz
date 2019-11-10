@@ -14,6 +14,7 @@ class Button: SKSpriteNode, ElementaryControl {
     
     let scaleIn = SKAction.scale(by: 0.8, duration: 0.05)
     let scaleOut = SKAction.scale(by: 1.25, duration: 0.05)
+    let waterSound = SKAction.playSoundFileNamed("Aqua_ButtonPress.m4a", waitForCompletion: false)
     
     
     // MARK:- VARIABLES
@@ -46,6 +47,7 @@ class Button: SKSpriteNode, ElementaryControl {
         print("Touched \(label!)")
         completions[0]()
         run(scaleIn)
+        run(waterSound)
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {

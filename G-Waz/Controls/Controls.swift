@@ -19,7 +19,6 @@ class Controls : SKNode {
     let offset = CGPoint(x: 5, y: 40)
     let buttonSpace = CGPoint(x: 60, y: 30)
     let pad = SKNode()
-    
     let testCompletions = [{
     () -> Void in
     print("Ahhhh")

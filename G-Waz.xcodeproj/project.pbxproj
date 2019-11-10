@@ -31,6 +31,7 @@
 		150762E02374AC04003D5628 /* PadDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadDirection.swift; sourceTree = "<group>"; };
 		150762E22374B8AB003D5628 /* PadDirection.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PadDirection.sks; sourceTree = "<group>"; };
 		150762E42374B924003D5628 /* PadCenter.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PadCenter.sks; sourceTree = "<group>"; };
+		150762EA2378900C003D5628 /* Aqua_ButtonPress.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Aqua_ButtonPress.m4a; sourceTree = "<group>"; };
 		15DF3F9D236A0CFC0044EBF6 /* ForeGround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForeGround.swift; sourceTree = "<group>"; };
 		5408CCBE2349F24D007F9D06 /* ElementaryControlProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementaryControlProtocol.swift; sourceTree = "<group>"; };
 		542AF090234F4AF400A0E7DD /* Controls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controls.swift; sourceTree = "<group>"; };
@@ -60,12 +61,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		150762D9236DDA12003D5628 /* New Group */ = {
+		150762D9236DDA12003D5628 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
 				150762DA236DDA2B003D5628 /* nodeNameConstants.swift */,
 			);
-			path = "New Group";
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		150762E623770BE4003D5628 /* SKS Files */ = {
@@ -76,6 +77,14 @@
 				150762E22374B8AB003D5628 /* PadDirection.sks */,
 			);
 			path = "SKS Files";
+			sourceTree = "<group>";
+		};
+		150762E923789003003D5628 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				150762EA2378900C003D5628 /* Aqua_ButtonPress.m4a */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 		15DF3F9C236A0CBC0044EBF6 /* Layers */ = {
@@ -119,7 +128,8 @@
 		54F97A6C2348E08700A1E78D /* G-Waz */ = {
 			isa = PBXGroup;
 			children = (
-				150762D9236DDA12003D5628 /* New Group */,
+				150762E923789003003D5628 /* Sounds */,
+				150762D9236DDA12003D5628 /* Constants */,
 				15DF3F9C236A0CBC0044EBF6 /* Layers */,
 				5408CCBD2349F216007F9D06 /* Controls */,
 				54F97A6D2348E08700A1E78D /* AppDelegate.swift */,
