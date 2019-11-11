@@ -14,7 +14,7 @@ class Button: SKSpriteNode, ElementaryControl {
     
     let scaleIn = SKAction.scale(by: 0.8, duration: 0.05)
     let scaleOut = SKAction.scale(by: 1.25, duration: 0.05)
-    let waterSound = SKAction.playSoundFileNamed("Aqua_ButtonPress.m4a", waitForCompletion: false)
+    let waterSound = SKAction.playSoundFileNamed("Aqua_ButtonPress.wav", waitForCompletion: false)
     
     
     // MARK:- VARIABLES

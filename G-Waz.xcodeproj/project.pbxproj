@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		150643D02379D84D00D7C7E4 /* Aqua_ButtonPress.wav in Resources */ = {isa = PBXBuildFile; fileRef = 150643CF2379D84D00D7C7E4 /* Aqua_ButtonPress.wav */; };
 		150762DB236DDA2B003D5628 /* nodeNameConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150762DA236DDA2B003D5628 /* nodeNameConstants.swift */; };
 		150762E12374AC04003D5628 /* PadDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150762E02374AC04003D5628 /* PadDirection.swift */; };
 		150762E32374B8AB003D5628 /* PadDirection.sks in Resources */ = {isa = PBXBuildFile; fileRef = 150762E22374B8AB003D5628 /* PadDirection.sks */; };
@@ -27,11 +28,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		150643CF2379D84D00D7C7E4 /* Aqua_ButtonPress.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Aqua_ButtonPress.wav; sourceTree = "<group>"; };
 		150762DA236DDA2B003D5628 /* nodeNameConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nodeNameConstants.swift; sourceTree = "<group>"; };
 		150762E02374AC04003D5628 /* PadDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadDirection.swift; sourceTree = "<group>"; };
 		150762E22374B8AB003D5628 /* PadDirection.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PadDirection.sks; sourceTree = "<group>"; };
 		150762E42374B924003D5628 /* PadCenter.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PadCenter.sks; sourceTree = "<group>"; };
-		150762EA2378900C003D5628 /* Aqua_ButtonPress.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Aqua_ButtonPress.m4a; sourceTree = "<group>"; };
 		15DF3F9D236A0CFC0044EBF6 /* ForeGround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForeGround.swift; sourceTree = "<group>"; };
 		5408CCBE2349F24D007F9D06 /* ElementaryControlProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementaryControlProtocol.swift; sourceTree = "<group>"; };
 		542AF090234F4AF400A0E7DD /* Controls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controls.swift; sourceTree = "<group>"; };
@@ -82,7 +83,7 @@
 		150762E923789003003D5628 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				150762EA2378900C003D5628 /* Aqua_ButtonPress.m4a */,
+				150643CF2379D84D00D7C7E4 /* Aqua_ButtonPress.wav */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -208,6 +209,7 @@
 				54F97A702348E08700A1E78D /* GameScene.sks in Resources */,
 				54F97A7B2348E08800A1E78D /* Assets.xcassets in Resources */,
 				54F97A7E2348E08800A1E78D /* LaunchScreen.storyboard in Resources */,
+				150643D02379D84D00D7C7E4 /* Aqua_ButtonPress.wav in Resources */,
 				150762E32374B8AB003D5628 /* PadDirection.sks in Resources */,
 				54F97A8C23490BD000A1E78D /* Button.sks in Resources */,
 			);
