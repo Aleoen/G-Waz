@@ -19,12 +19,19 @@ class Controls : SKNode {
     let offset = CGPoint(x: 5, y: 40)
     let buttonSpace = CGPoint(x: 60, y: 30)
     let pad = SKNode()
+    
+    //FIXME: And if it was var and modify at init ?
+    //FIXME: Replace that by association of action type and action performed on what (action is not SKAction)
     let testCompletions = [{
-    () -> Void in
-    print("Ahhhh")
-},{
+() -> Void in
+print("Down")
+}, {
         () -> Void in
-        print("Brrrrrrr")
+    
+    print("long pressing")
+    }, {
+        () -> Void in
+        print("Up")
     }]
     
     //MARK:- VARIABLES
@@ -32,6 +39,7 @@ class Controls : SKNode {
     var buttons: [Button] = [Button]()
     var padDirections: [PadDirection] = [PadDirection]()
     var view: SKView!
+    var ship: Ship?
     
     //MARK:- INIT
     

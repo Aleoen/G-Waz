@@ -48,6 +48,10 @@ class Button: SKSpriteNode, ElementaryControl {
         completions[0]()
         run(scaleIn)
         run(waterSound)
+        
+        // (scene as! GameScene).middleGround.ship.physicsBody?.applyForce(CGVector(dx: 0, dy: 100))
+        (scene as! GameScene).middleGround.ship.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 1000))
+        
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -55,7 +59,11 @@ class Button: SKSpriteNode, ElementaryControl {
         
         completions[1]()
         run(scaleOut)
+        
+        // (scene as! GameScene).middleGround.ship.physicsBody?.applyForce(CGVector(dx: 0, dy: 0))
+        (scene as! GameScene).middleGround.ship.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 0))
     }
+    
     
     
     

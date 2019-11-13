@@ -8,10 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		150643D02379D84D00D7C7E4 /* Aqua_ButtonPress.wav in Resources */ = {isa = PBXBuildFile; fileRef = 150643CF2379D84D00D7C7E4 /* Aqua_ButtonPress.wav */; };
+		150643D22379EE4B00D7C7E4 /* MiddleGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150643D12379EE4B00D7C7E4 /* MiddleGround.swift */; };
+		150643D62379F10500D7C7E4 /* Ship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150643D52379F10500D7C7E4 /* Ship.swift */; };
+		150643D92379F32B00D7C7E4 /* Ship.sks in Resources */ = {isa = PBXBuildFile; fileRef = 150643D82379F32B00D7C7E4 /* Ship.sks */; };
 		150762DB236DDA2B003D5628 /* nodeNameConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150762DA236DDA2B003D5628 /* nodeNameConstants.swift */; };
 		150762E12374AC04003D5628 /* PadDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150762E02374AC04003D5628 /* PadDirection.swift */; };
 		150762E32374B8AB003D5628 /* PadDirection.sks in Resources */ = {isa = PBXBuildFile; fileRef = 150762E22374B8AB003D5628 /* PadDirection.sks */; };
 		150762E52374B924003D5628 /* PadCenter.sks in Resources */ = {isa = PBXBuildFile; fileRef = 150762E42374B924003D5628 /* PadCenter.sks */; };
+		15B20C40237CABA6005D8624 /* commandConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B20C3F237CABA6005D8624 /* commandConstants.swift */; };
 		15DF3F9E236A0CFC0044EBF6 /* ForeGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DF3F9D236A0CFC0044EBF6 /* ForeGround.swift */; };
 		5408CCBF2349F24D007F9D06 /* ElementaryControlProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5408CCBE2349F24D007F9D06 /* ElementaryControlProtocol.swift */; };
 		542AF091234F4AF400A0E7DD /* Controls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542AF090234F4AF400A0E7DD /* Controls.swift */; };
@@ -29,10 +33,14 @@
 
 /* Begin PBXFileReference section */
 		150643CF2379D84D00D7C7E4 /* Aqua_ButtonPress.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Aqua_ButtonPress.wav; sourceTree = "<group>"; };
+		150643D12379EE4B00D7C7E4 /* MiddleGround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiddleGround.swift; sourceTree = "<group>"; };
+		150643D52379F10500D7C7E4 /* Ship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ship.swift; sourceTree = "<group>"; };
+		150643D82379F32B00D7C7E4 /* Ship.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Ship.sks; sourceTree = "<group>"; };
 		150762DA236DDA2B003D5628 /* nodeNameConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nodeNameConstants.swift; sourceTree = "<group>"; };
 		150762E02374AC04003D5628 /* PadDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadDirection.swift; sourceTree = "<group>"; };
 		150762E22374B8AB003D5628 /* PadDirection.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PadDirection.sks; sourceTree = "<group>"; };
 		150762E42374B924003D5628 /* PadCenter.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PadCenter.sks; sourceTree = "<group>"; };
+		15B20C3F237CABA6005D8624 /* commandConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = commandConstants.swift; sourceTree = "<group>"; };
 		15DF3F9D236A0CFC0044EBF6 /* ForeGround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForeGround.swift; sourceTree = "<group>"; };
 		5408CCBE2349F24D007F9D06 /* ElementaryControlProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementaryControlProtocol.swift; sourceTree = "<group>"; };
 		542AF090234F4AF400A0E7DD /* Controls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controls.swift; sourceTree = "<group>"; };
@@ -62,10 +70,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		150643D32379F0A200D7C7E4 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				150643D72379F30E00D7C7E4 /* SKS Files */,
+				150643D52379F10500D7C7E4 /* Ship.swift */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		150643D72379F30E00D7C7E4 /* SKS Files */ = {
+			isa = PBXGroup;
+			children = (
+				150643D82379F32B00D7C7E4 /* Ship.sks */,
+			);
+			path = "SKS Files";
+			sourceTree = "<group>";
+		};
 		150762D9236DDA12003D5628 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
 				150762DA236DDA2B003D5628 /* nodeNameConstants.swift */,
+				15B20C3F237CABA6005D8624 /* commandConstants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -92,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				15DF3F9D236A0CFC0044EBF6 /* ForeGround.swift */,
+				150643D12379EE4B00D7C7E4 /* MiddleGround.swift */,
 			);
 			path = Layers;
 			sourceTree = "<group>";
@@ -129,6 +156,7 @@
 		54F97A6C2348E08700A1E78D /* G-Waz */ = {
 			isa = PBXGroup;
 			children = (
+				150643D32379F0A200D7C7E4 /* Player */,
 				150762E923789003003D5628 /* Sounds */,
 				150762D9236DDA12003D5628 /* Constants */,
 				15DF3F9C236A0CBC0044EBF6 /* Layers */,
@@ -206,6 +234,7 @@
 				54F97A872348E3F600A1E78D /* LICENSE in Resources */,
 				150762E52374B924003D5628 /* PadCenter.sks in Resources */,
 				54F97A792348E08700A1E78D /* Main.storyboard in Resources */,
+				150643D92379F32B00D7C7E4 /* Ship.sks in Resources */,
 				54F97A702348E08700A1E78D /* GameScene.sks in Resources */,
 				54F97A7B2348E08800A1E78D /* Assets.xcassets in Resources */,
 				54F97A7E2348E08800A1E78D /* LaunchScreen.storyboard in Resources */,
@@ -225,9 +254,12 @@
 				15DF3F9E236A0CFC0044EBF6 /* ForeGround.swift in Sources */,
 				5408CCBF2349F24D007F9D06 /* ElementaryControlProtocol.swift in Sources */,
 				54F97A742348E08700A1E78D /* GameScene.swift in Sources */,
+				150643D22379EE4B00D7C7E4 /* MiddleGround.swift in Sources */,
 				54F97A762348E08700A1E78D /* GameViewController.swift in Sources */,
 				542AF091234F4AF400A0E7DD /* Controls.swift in Sources */,
+				150643D62379F10500D7C7E4 /* Ship.swift in Sources */,
 				54F97A6E2348E08700A1E78D /* AppDelegate.swift in Sources */,
+				15B20C40237CABA6005D8624 /* commandConstants.swift in Sources */,
 				150762DB236DDA2B003D5628 /* nodeNameConstants.swift in Sources */,
 				54F97A8A23490B4900A1E78D /* Button.swift in Sources */,
 				150762E12374AC04003D5628 /* PadDirection.swift in Sources */,

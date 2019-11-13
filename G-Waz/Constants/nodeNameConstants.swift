@@ -14,7 +14,3 @@ enum nodeName {
     static let backGround = "BackGround"
     static let controls = "Controls"
 }
-
-enum padDirection {
-    case up, down, right, left, center
-}

@@ -17,7 +17,7 @@ class GameScene: SKScene {
     
     var cameraNode: SKCameraNode!
     var foreGround: ForeGround!
-//    var middleGround: MiddleGround!
+    var middleGround: MiddleGround!
 //    var backGround: BackGround!
     
     override func didMove(to view: SKView) {
@@ -26,6 +26,8 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         foreGround.controls.updatePosition()
+        
+        print(middleGround.ship.physicsBody?.velocity)
     }
     
     
@@ -44,7 +46,9 @@ class GameScene: SKScene {
         foreGround = ForeGround()
         cameraNode.addChild(foreGround)
         
-        
+        middleGround = MiddleGround()
+        addChild(middleGround)
+
         
         // Setup layers and nodes in layers' positions
         
