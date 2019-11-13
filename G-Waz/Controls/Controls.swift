@@ -20,20 +20,6 @@ class Controls : SKNode {
     let buttonSpace = CGPoint(x: 60, y: 30)
     let pad = SKNode()
     
-    //FIXME: And if it was var and modify at init ?
-    //FIXME: Replace that by association of action type and action performed on what (action is not SKAction)
-    let testCompletions = [{
-() -> Void in
-print("Down")
-}, {
-        () -> Void in
-    
-    print("long pressing")
-    }, {
-        () -> Void in
-        print("Up")
-    }]
-    
     //MARK:- VARIABLES
     
     var buttons: [Button] = [Button]()
@@ -57,9 +43,9 @@ print("Down")
     //MARK:- SETUPS
     
     func setupButtons() {
-        buttons.append(Button.setupForElementaryControl(fileNamed: "Button", with: #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1), and: "0", perform: testCompletions) as! Button)
-        buttons.append(Button.setupForElementaryControl(fileNamed: "Button", with: #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1), and: "X", perform: testCompletions) as! Button)
-        buttons.append(Button.setupForElementaryControl(fileNamed: "Button", with: #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1), and: "A", perform: testCompletions) as! Button)
+        buttons.append(Button.setupForElementaryControl(fileNamed: "Button", with: #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1), and: "0", command: .up) as! Button)
+        buttons.append(Button.setupForElementaryControl(fileNamed: "Button", with: #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1), and: "X", command: .down) as! Button)
+        buttons.append(Button.setupForElementaryControl(fileNamed: "Button", with: #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1), and: "A", command: .up) as! Button)
         
         for button in buttons {
             addChild(button)
@@ -70,11 +56,11 @@ print("Down")
     }
     
     func setupPad() {
-        padDirections.append(PadDirection.setupForElementaryControl(fileNamed: "PadDirection", with: #colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1), and: "None", perform: testCompletions) as! PadDirection)
-        padDirections.append(PadDirection.setupForElementaryControl(fileNamed: "PadDirection", with: #colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1), and: "None", perform: testCompletions) as! PadDirection)
-        padDirections.append(PadDirection.setupForElementaryControl(fileNamed: "PadDirection", with: #colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1), and: "None", perform: testCompletions) as! PadDirection)
-        padDirections.append(PadDirection.setupForElementaryControl(fileNamed: "PadDirection", with: #colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1), and: "None", perform: testCompletions) as! PadDirection)
-        padDirections.append(PadDirection.setupForElementaryControl(fileNamed: "PadCenter", with: #colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1), and: "None", perform: nil) as! PadDirection)
+        padDirections.append(PadDirection.setupForElementaryControl(fileNamed: "PadDirection", with: #colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1), and: "None", command: .up) as! PadDirection)
+        padDirections.append(PadDirection.setupForElementaryControl(fileNamed: "PadDirection", with: #colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1), and: "None", command: .right) as! PadDirection)
+        padDirections.append(PadDirection.setupForElementaryControl(fileNamed: "PadDirection", with: #colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1), and: "None", command: .down) as! PadDirection)
+        padDirections.append(PadDirection.setupForElementaryControl(fileNamed: "PadDirection", with: #colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1), and: "None", command: .left) as! PadDirection)
+        padDirections.append(PadDirection.setupForElementaryControl(fileNamed: "PadCenter", with: #colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1), and: "None", command: .center) as! PadDirection)
         
         for padDirection in padDirections {
             pad.addChild(padDirection)

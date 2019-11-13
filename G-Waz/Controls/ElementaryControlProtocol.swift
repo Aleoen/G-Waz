@@ -10,14 +10,14 @@ import SpriteKit
 
 protocol ElementaryControl: SKSpriteNode {
     
-    static func setupForElementaryControl(fileNamed: String, with color: SKColor?, and label: String, perform completions : [() -> Void]?) -> ElementaryControl
+    static func setupForElementaryControl(fileNamed: String, with color: SKColor?, and label: String, command: commandConstants) -> ElementaryControl
     
-    func specificSetupForElementaryControl(with label: String, with color: SKColor?, perform completions: [() -> Void]?)
+    func specificSetupForElementaryControl(with label: String, with color: SKColor?, command: commandConstants)
 }
 
 extension ElementaryControl {
     
-    static func setupForElementaryControl(fileNamed: String, with color: SKColor?, and label: String, perform completions: [() -> Void]?) -> ElementaryControl {
+    static func setupForElementaryControl(fileNamed: String, with color: SKColor?, and label: String, command: commandConstants) -> ElementaryControl {
         guard let controlScene = SKScene(fileNamed: fileNamed) else {
             fatalError("Could not load scene named: \(fileNamed)")
         }
@@ -34,7 +34,7 @@ extension ElementaryControl {
         control.zPosition = 10
         control.removeFromParent()
         
-        control.specificSetupForElementaryControl(with: label, with: color, perform: completions)
+        control.specificSetupForElementaryControl(with: label, with: color, command: command)
         return control
     }
     

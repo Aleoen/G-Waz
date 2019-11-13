@@ -27,5 +27,21 @@ class Ship: SKSpriteNode {
     
     //MARK:- METHODS
     
+    func operateCommand(command: commandConstants) {
+        switch command {
+        case .up:
+            physicsBody?.applyForce(CGVector(dx: 0, dy: 1000))
+        case .down:
+            physicsBody?.applyForce(CGVector(dx: 0, dy: -1000))
+        case .right:
+            physicsBody?.applyForce(CGVector(dx: 100, dy: 0))
+        case .left:
+            physicsBody?.applyForce(CGVector(dx: -100, dy: 0))
+        default:
+            print("No command")
+        }
+        
+        print(command)
+    }
     
 }

@@ -26,8 +26,6 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         foreGround.controls.updatePosition()
-        
-        print(middleGround.ship.physicsBody?.velocity)
     }
     
     

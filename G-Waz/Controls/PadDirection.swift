@@ -15,9 +15,15 @@ class PadDirection: SKSpriteNode, ElementaryControl {
     let scaleIn = SKAction.scale(to: 0.95, duration: 0.05)
     let scaleOut = SKAction.scale(to: 1.0, duration: 0.05)
     
+    
+    //MARK: - VARIABLES
+    
+    var command: commandConstants!
+    
     //MARK: - SETUP
     
-    func specificSetupForElementaryControl(with label: String, with color: SKColor?, perform completions: [() -> Void]?) {
+    func specificSetupForElementaryControl(with label: String, with color: SKColor?, command: commandConstants) {
+        self.command = command
         if let color = color {
             run(SKAction.colorize(with: color, colorBlendFactor: 1.0, duration: 0))
         }
@@ -27,5 +33,6 @@ class PadDirection: SKSpriteNode, ElementaryControl {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         run(SKAction.sequence([scaleIn, scaleOut]))
-            }
+        (scene as! GameScene).middleGround.ship.operateCommand(command: command)
+    }
 }

@@ -20,13 +20,13 @@ class Button: SKSpriteNode, ElementaryControl {
     // MARK:- VARIABLES
     
     var label: String!
-    var completions: [()->Void]!
+    var command: commandConstants!
     
     //MARK: SETUP
     
-    func specificSetupForElementaryControl(with label: String, with color: SKColor?, perform completions: [() -> Void]?) {
+    func specificSetupForElementaryControl(with label: String, with color: SKColor?, command: commandConstants) {
         self.label = label
-        self.completions = completions
+        self.command = command
         
         if let color = color {
             run(SKAction.colorize(with: color, colorBlendFactor: 1.0, duration: 0))
@@ -43,25 +43,15 @@ class Button: SKSpriteNode, ElementaryControl {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
-        
-        print("Touched \(label!)")
-        completions[0]()
         run(scaleIn)
         run(waterSound)
         
-        // (scene as! GameScene).middleGround.ship.physicsBody?.applyForce(CGVector(dx: 0, dy: 100))
-        (scene as! GameScene).middleGround.ship.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 1000))
-        
+        (scene as! GameScene).middleGround.ship.operateCommand(command: command)
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
-        
-        completions[1]()
         run(scaleOut)
-        
-        // (scene as! GameScene).middleGround.ship.physicsBody?.applyForce(CGVector(dx: 0, dy: 0))
-        (scene as! GameScene).middleGround.ship.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 0))
     }
     
     
