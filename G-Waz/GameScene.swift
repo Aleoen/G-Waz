@@ -9,24 +9,48 @@
 import SpriteKit
 
 
+
 class GameScene: SKScene {
     
+    
+    //MARK:- VARIABLES
+    
+    var cameraNode: SKCameraNode!
+    var foreGround: ForeGround!
+    var middleGround: MiddleGround!
+//    var backGround: BackGround!
+    
     override func didMove(to view: SKView) {
+        setupLayers()
+    }
+    
+    override func update(_ currentTime: TimeInterval) {
+        foreGround.controls.updatePosition()
+    }
+    
+    
+    
+    
+    
+    //MARK:- SETUPS
+    
+    func setupLayers() {
+        // Create layers
+        cameraNode = SKCameraNode()
+        cameraNode.position = CGPoint.zero
+        addChild(cameraNode)
+        camera = cameraNode
         
+        foreGround = ForeGround()
+        cameraNode.addChild(foreGround)
         
-        if let scene = SKScene(fileNamed: "Button") {
-            if let button = scene.childNode(withName: "Button") as? Button {
-                
-                //TODO: refactor to Button
-                button.removeFromParent()
-                button.zPosition = 10
-                button.isUserInteractionEnabled = true
-                button.isPaused = false
-                button.color = SKColor.green
-                
-                addChild(button)
-            }
-        }
+        middleGround = MiddleGround()
+        addChild(middleGround)
+
+        
+        // Setup layers and nodes in layers' positions
+        
+        foreGround.controls.updatePosition()
     }
     
     
